@@ -27,13 +27,15 @@ def eqnprime(y, t, L1, L2, m1, m2):
 ##### The important line in which we change our initial conditions:
 y0 = np.array([2.391, 0, 0.353, 0])
 
-##### The lines below change how long (and at what time intervals) the 'solving'/integration of the ODEs is done at.
+##### The lines below change how long (and at what time intervals) the 'solving'/integration of the ODEs is done at/for. For example, below, it is being done for
+##### what would be 100 seconds in real life, at intervals of 0.01 seconds.
 tmax, dt = 100, 0.01
 t = np.arange(0, tmax+dt, dt)
 
 ##### The line which actually does the integration of the differential equations.
 y = odeint(eqnprime, y0, t, args=(L1,L2,m1,m2))
 
+##### Taking the outputs of the angles.
 th1, th2 = y[:,0], y[:,2]
 
 ##### Defining the coordinates of the pendulums.
