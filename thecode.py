@@ -8,8 +8,7 @@ L1, L2 = 10, 10
 m1, m2 = 10, 10
 g = 9.81
 
-##### Here, we are defining the coupled ODEs that we shall use. If you follow it carefully, all the maths presented
-##### here has been explained in the report.
+##### Here, we are defining the coupled ODEs that we shall use. If you follow it carefully, all the maths presented here has been explained in the report.
 def eqnprime(y, t, L1, L2, m1, m2):
     th1, w1, th2, w2 = y
 
@@ -27,7 +26,7 @@ def eqnprime(y, t, L1, L2, m1, m2):
 ##### The important line in which we change our initial conditions:
 y0 = np.array([2.391, 0, 0.353, 0])
 
-##### The lines below change how long (and at what time intervals) the 'solving' of the ODEs is done at.
+##### The lines below change how long (and at what time intervals) the 'solving'/integration of the ODEs is done at.
 tmax, dt = 100, 0.01
 t = np.arange(0, tmax+dt, dt)
 
@@ -44,21 +43,25 @@ y2 = y1-L2*np.cos(th2)
 
 
 ##### The blocks below are to plot the graphs presented in the report.
+##### First block: x-coordinates against time for both pendulums
 plt.subplot(2,2,1)
 plt.xticks([])
 plt.yticks([])
 timex = plt.plot(t,x1, color = 'black', linewidth=0.5), plt.plot(t,x2, color = 'orange', linewidth=0.5)
 
+##### Second block: y-coordinates against time for both pendulums
 plt.subplot(2,2,2)
 plt.xticks([])
 plt.yticks([])
 timey = plt.plot(t,y1, color = 'black', linewidth=0.5), plt.plot(t,y2, color = 'orange', linewidth=0.5)
 
+##### Third block: the path of the first pendulum
 plt.subplot(2,2,3)
 plt.xticks([])
 plt.yticks([])
 posa = plt.plot(x1,y1,color='red',linewidth=0.5)
 
+##### Fourth block: the path of the second pendulum
 plt.subplot(2,2,4)
 plt.xticks([])
 plt.yticks([])
