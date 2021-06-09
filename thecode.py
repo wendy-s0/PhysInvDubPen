@@ -8,7 +8,8 @@ L1, L2 = 10, 10
 m1, m2 = 10, 10
 g = 9.81
 
-##### Here, we are defining the coupled ODEs that we shall use. If you follow it carefully, all the maths presented here has been explained in the report.
+##### Here, we are defining the coupled ODEs that we shall use. If you follow it carefully, all the maths presented here has been explained in the report. 
+##### The variable names are quite self-explanatory - th1 = theta_1, w_1 = angular velocity 1 (or derivative of theta_1 here) etc.
 def eqnprime(y, t, L1, L2, m1, m2):
     th1, w1, th2, w2 = y
 
